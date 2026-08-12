@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f6f4">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="description" content="Markov Health OS — приватная local-first система для истории здоровья, анализов, восстановления и подготовки к врачу.">
+  <meta name="application-name" content="Markov Health OS">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:title" content="Markov Health OS">
+  <meta property="og:description" content="Вся история здоровья в одной системе — локально, понятно, без лишнего шума.">
+  <meta property="og:type" content="website">
+  <title>Markov Health OS</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/markov-health-os.svg" type="image/svg+xml">
+  <link rel="icon" href="./assets/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/icon-192.png">
+  <link rel="stylesheet" href="./src/v3/styles.css">
+</head>
+<body>
+  <noscript>Для работы Markov Health OS требуется JavaScript.</noscript>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Основная навигация">
+      <a class="brand" href="#dashboard" aria-label="Markov Health OS — обзор">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M6.5 23.5V8.5h4.2l5.3 8.8 5.3-8.8h4.2v15h-4.1v-8.2L16 23.9l-5.4-8.6v8.2H6.5Z"/></svg>
+        </span>
+        <span class="brand-copy"><strong>MARKOV</strong><small>HEALTH OS · YOUR HEALTH, IN CONTEXT</small></span>
+      </a>
+
+      <div class="profile" aria-label="Активный профиль">
+        <span class="profile-avatar" aria-hidden="true"><span class="profile-dot"></span></span>
+        <div class="profile-copy"><small>АКТИВНЫЙ ПРОФИЛЬ</small><strong id="profile-name">Health OS</strong></div>
+        <span class="local-chip">LOCAL</span>
+      </div>
+
+      <p class="nav-label">СИСТЕМА</p>
+      <nav class="nav">
+        <a class="nav-link" data-route="dashboard" href="#dashboard">
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span>
+          <b>Обзор</b>
+        </a>
+        <a class="nav-link" data-route="labs" href="#labs">
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/><path d="M7.5 15h9"/></svg></span>
+          <b>Анализы</b>
+        </a>
+        <a class="nav-link" data-route="timeline" href="#timeline">
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span>
+          <b>История</b>
+        </a>
+        <a class="nav-link" data-route="brief" href="#brief">
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5M10 12h5M10 16h5"/></svg></span>
+          <b>Врачу</b>
+        </a>
+        <a class="nav-link" data-route="recommendations" href="#recommendations">
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 1.2 3.8L17 8l-3.8 1.2L12 13l-1.2-3.8L7 8l3.8-1.2L12 3ZM18 13l.8 2.2L21 16l-2.2.8L18 19l-.8-2.2L15 16l2.2-.8L18 13ZM6 14l.8 2.2L9 17l-2.2.8L6 20l-.8-2.2L3 17l2.2-.8L6 14Z"/></svg></span>
+          <b>Рекомендации</b>
+        </a>
+        <a class="nav-link" data-route="settings" href="#settings">
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.4-2.4 1a7.8 7.8 0 0 0-1.8-1L14.4 3h-4.8l-.3 3.1a7.8 7.8 0 0 0-1.8 1l-2.4-1-2 3.4L5.1 11a7 7 0 0 0 0 2l-2 1.5 2 3.4 2.4-1a7.8 7.8 0 0 0 1.8 1l.3 3.1h4.8l.3-3.1a7.8 7.8 0 0 0 1.8-1l2.4 1 2-3.4-2-1.5a7 7 0 0 0 .1-1Z"/></svg></span>
+          <b>Настройки</b>
+        </a>
+      </nav>
+
+      <div class="sidebar-actions">
+        <button id="quick-add-button" class="sidebar-primary" type="button">
+          <span class="plus-icon" aria-hidden="true">+</span><span>Быстро добавить</span>
+        </button>
+        <button id="search-button" class="search-key" type="button">
+          <span class="search-copy"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>Поиск</span><kbd>Ctrl K</kbd>
+        </button>
+      </div>
+
+      <div class="privacy-status">
+        <span class="privacy-led" aria-hidden="true"></span>
+        <div><strong>Данные на устройстве</strong><small>Без аналитики и трекеров</small></div>
+      </div>
+      <footer><span id="app-version">v2.0.0</span><span>·</span><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a></footer>
+    </aside>
+
+    <main id="main" class="main" tabindex="-1"></main>
+  </div>
+
+  <div class="mobile-tools" aria-label="Быстрые действия">
+    <button id="mobile-search-button" class="mobile-tool" type="button" aria-label="Открыть поиск">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
+    </button>
+    <button id="quick-add-fab" class="mobile-fab" type="button" aria-label="Быстро добавить">+</button>
+  </div>
+
+  <dialog id="dialog" class="dialog">
+    <div class="dialog-card">
+      <header><div><span class="dialog-kicker">MARKOV HEALTH OS</span><h2 id="dialog-title"></h2></div><button id="dialog-close" class="icon-btn" type="button" aria-label="Закрыть">×</button></header>
+      <div id="dialog-body" class="dialog-body"></div>
+      <footer id="dialog-actions" class="dialog-actions"></footer>
+    </div>
+  </dialog>
+
+  <dialog id="search-dialog" class="search-dialog">
+    <div class="search-card">
+      <div class="search-line">
+        <span class="search-leading" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg></span>
+        <input id="global-search" type="search" placeholder="Раздел, показатель или действие…" autocomplete="off" aria-label="Поиск по Health OS">
+        <button id="search-close" class="icon-btn" type="button" aria-label="Закрыть поиск">×</button>
+      </div>
+      <div id="search-results" class="search-results" role="listbox" aria-label="Результаты поиска"></div>
+      <div class="search-hint"><span>↑↓ навигация</span><span>Enter открыть</span><span>Esc закрыть</span></div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+  <script src="./src/catalog/labs.js" defer></script>
+  <script type="module" src="./src/app/main.js"></script>
+</body>
+</html>
